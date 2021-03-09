@@ -23,16 +23,7 @@ function getBorrowersForBook(book, accounts) {
   return book.borrows.map(({id, returned}) => ({
     ...accountId[id],
     returned
-  })).slice(0,10)
-  // const bookBorrows = book.borrows;
-  // const borrowers = [];
-  // bookBorrows.forEach( (id) => { 
-  //   if (accounts.id === id) {
-  //     borrowers.push(accounts[user])
-  //   }
-  // });
-  // //return borrowers;
-  // console.log(borrowers);
+  })).slice(0,10);
 }
 
 module.exports = {
