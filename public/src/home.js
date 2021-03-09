@@ -37,39 +37,7 @@ function getMostCommonGenres(books) {
   }, {})
   const sortValues = sortFunction(count);
   return sortValues.map((name) => ({name, count: count[name]})).slice(0, 5);
-  // .map for an popAuthorsay, (to return genres but has duplicates)
-  // .find in a for loop and push the results into an popAuthorsay (to return genres with no duplicates)
-  // make a switch case that has a counter for each genre
-  // let genreMap = books.map((books) => books.genre);
-  // let bookGenres = []; /*{};*/
-  // genreMap.forEach( genre => { 
-  //   if (!bookGenres.includes(genre) /*!bookGenres[genre]*/) {
-  //     bookGenres.push(genre);
-  //   } 
-  // });
-  // let counter = [];
-  // switch (genreMap) {
-  //   case bookGenres[0]:
-  //     counter[0] ++;
-  //     break;
-  //   case bookGenres[1]:
-  //     counter[1] ++;
-  //     break;
-  //   case bookGenres[2]:
-  //     counter[2] ++;
-  //     break;
-  //   case bookGenres[3]:
-  //     counter[3] ++;
-  //     break;
-  //   case bookGenres[4]:
-  //     counter[4] ++;
-  //     break;
-  //   case bookGenres[5]:
-  //     counter[5] ++;
-  //     break;
-  //   default:
-  //     result = 0;
-  // }
+
 }
 
 function getMostPopularBooks(books) {
@@ -80,22 +48,8 @@ function getMostPopularBooks(books) {
     return popular;
   })
   return result.sort((titleA, titleB) => titleB.count - titleA.count).slice(0,5);
-  // sort by books.borrows.length
-  // return 5 largest books.borrows.length
-  // console.log( books.sort((bookA, bookB) => (bookA.borrows.length > bookB.borrows.length ? 1 : -1)) );
 }
 
-// function getMostPopularAuthors(books, authors) {
-//   let popAuthors = [];
-//   for (let book in books){
-//     let aBook = books[book].authorId;
-//     let aMatch = authors.find((auth) => auth.id === aBook);
-//     let aName = aMatch.name.first + " " + aMatch.name.last;
-//     popAuthors.push({ name: aName, count: books[book].borrows.length });
-//   }
-//   const sortValues = sortFunction(popAuthors);
-//   return sortValues.map((name) => ({name, count: count[name]})).slice(0, 5);
-// }
 function getMostPopularAuthors(books, authors) {
   let popAuthors = [];
   for (let book in books){
